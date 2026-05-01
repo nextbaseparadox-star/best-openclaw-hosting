@@ -1363,11 +1363,12 @@
 
     @media (max-width: 768px) {
       .navbar-links { display: none; }
+      .navbar-cta { display: none; }
       .hero { padding: 48px 0 40px; }
       .hero-layout { grid-template-columns: 1fr; gap: 36px; }
       .hero-winner-card { max-width: 380px; }
       .verdict-cards { grid-template-columns: 1fr; }
-      .section { padding: 52px 0; }
+      .section { padding: 44px 0; }
       .card-main-row { grid-template-columns: 70px 1fr; }
       .card-right { display: none; }
       .card-ratings-row { grid-template-columns: repeat(2, 1fr); }
@@ -1376,6 +1377,10 @@
       .who-grid { grid-template-columns: repeat(2, 1fr); }
       .pros-cons-row { grid-template-columns: 1fr; }
       .footer-main { flex-direction: column; }
+      /* Inline grid overrides */
+      .req-grid { grid-template-columns: 1fr !important; }
+      .pricing-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .user-type-grid { grid-template-columns: repeat(2, 1fr) !important; }
     }
 
     @media (max-width: 480px) {
@@ -1389,6 +1394,10 @@
       .card-rank-block { flex-direction: row; }
       .card-body { padding: 20px; }
       .section-title { font-size: 22px; }
+      .pricing-grid { grid-template-columns: 1fr !important; }
+      .user-type-grid { grid-template-columns: 1fr !important; }
+      .setup-time-compare { grid-template-columns: 1fr; }
+      .req-pills { flex-direction: column !important; }
     }
   </style>
 </head>
@@ -1658,7 +1667,7 @@
         <h2 class="section-title">OpenClaw Hosting Requirements Checklist</h2>
         <p class="section-subtitle">Make sure your hosting meets these minimum requirements before installing OpenClaw.</p>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:820px;margin:0 auto;">
+      <div class="req-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:820px;margin:0 auto;">
         <!-- Minimum Requirements Card -->
         <div style="border:1px solid #E5E7EB;border-radius:12px;padding:24px 28px;background:#fff;">
           <h3 style="font-size:14px;font-weight:700;color:#111827;margin:0 0 16px 0;">Minimum Requirements</h3>
@@ -1680,7 +1689,7 @@
       </div>
 
       <!-- Requirement Pills -->
-      <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:20px;max-width:820px;margin-left:auto;margin-right:auto;">
+      <div class="req-pills" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:20px;max-width:820px;margin-left:auto;margin-right:auto;">
         <div style="font-size:13px;color:#475569;background:#fff;border:1px solid #E5E7EB;border-radius:8px;padding:10px 16px;"><span style="color:#059669;margin-right:6px;">✔</span> AI API key (Anthropic, OpenAI, or Google)</div>
         <div style="font-size:13px;color:#475569;background:#fff;border:1px solid #E5E7EB;border-radius:8px;padding:10px 16px;"><span style="color:#059669;margin-right:6px;">✔</span> Stable internet connection</div>
         <div style="font-size:13px;color:#475569;background:#fff;border:1px solid #E5E7EB;border-radius:8px;padding:10px 16px;"><span style="color:#059669;margin-right:6px;">✔</span> SSL certificate (auto on Ampere)</div>
@@ -1808,7 +1817,7 @@
           <!-- AMPERE PRICING BREAKDOWN -->
           <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid #E2E8F0;">
             <h4 style="font-size:1.05rem;font-weight:800;color:#0F172A;margin-bottom:1.2rem;">💰 Ampere.sh Pricing Plans</h4>
-            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;">
+            <div class="pricing-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;">
               <!-- FREE -->
               <div style="border:1px solid #E2E8F0;border-radius:12px;padding:1.2rem;background:#FAFAFA;">
                 <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#10B981;margin-bottom:0.4rem;">FREE FOREVER</div>
@@ -2312,7 +2321,7 @@
         <p class="section-subtitle">Not sure which platform is right for you? Find the best match based on your needs.</p>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+      <div class="user-type-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
 
         <div style="background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:24px;display:flex;flex-direction:column;">
           <h3 style="font-size:15px;font-weight:700;color:#111827;margin:0 0 8px 0;">Beginners / Non-Technical</h3>
