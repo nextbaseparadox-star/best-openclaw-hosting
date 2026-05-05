@@ -1361,9 +1361,20 @@
       .card-ratings-row { grid-template-columns: repeat(3, 1fr); }
     }
 
+    /* ── HAMBURGER MENU ── */
+    .navbar-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .navbar-hamburger span { display: block; width: 20px; height: 2px; background: var(--text-dark); margin: 4px 0; transition: 0.3s; }
+    .mobile-menu { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #fff; border-bottom: 1px solid var(--border); padding: 16px 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); z-index: 199; }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; padding: 10px 0; font-size: 15px; font-weight: 500; color: var(--text-med); text-decoration: none; border-bottom: 1px solid var(--border); }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--blue); }
+    .mobile-menu .mobile-cta { display: inline-block; margin-top: 12px; background: var(--blue); color: #fff; padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 14px; text-align: center; width: 100%; }
+
     @media (max-width: 768px) {
       .navbar-links { display: none; }
       .navbar-cta { display: none; }
+      .navbar-hamburger { display: block; }
       .hero { padding: 48px 0 40px; }
       .hero-layout { grid-template-columns: 1fr; gap: 36px; }
       .hero-winner-card { max-width: 380px; }
@@ -1417,9 +1428,23 @@
           <li><a href="#faq">FAQ</a></li>
         </ul>
         <a href="https://ampere.sh" class="navbar-cta" target="_blank" rel="noopener">Visit #1 Pick →</a>
+        <button class="navbar-hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </nav>
+  <div class="mobile-menu">
+    <a href="#compare">Comparison</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#requirements">Requirements</a>
+    <a href="#user-type">By User Type</a>
+    <a href="#faq">FAQ</a>
+    <a href="/about">About</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="https://ampere.sh" class="mobile-cta" target="_blank" rel="noopener">Visit #1 Pick →</a>
+  </div>
 
   <!-- ── HERO ── -->
   <section class="hero">
