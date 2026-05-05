@@ -38,7 +38,14 @@
     .navbar-links a:hover { color: var(--text-dark); }
     .navbar-cta { display: inline-flex; align-items: center; gap: 6px; background: var(--blue); color: #fff !important; font-size: 13px; font-weight: 600; padding: 9px 18px; border-radius: 8px; text-decoration: none !important; transition: background 0.15s, transform 0.1s; white-space: nowrap; }
     .navbar-cta:hover { background: var(--blue-dark); transform: translateY(-1px); }
-    .navbar-mobile-back { display: none; font-size: 14px; font-weight: 600; color: var(--blue); text-decoration: none; }
+    .navbar-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .navbar-hamburger span { display: block; width: 20px; height: 2px; background: var(--text-dark); margin: 4px 0; transition: 0.3s; }
+    .mobile-menu { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #fff; border-bottom: 1px solid var(--border); padding: 16px 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); z-index: 199; }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; padding: 10px 0; font-size: 15px; font-weight: 500; color: var(--text-med); text-decoration: none; border-bottom: 1px solid var(--border); }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--blue); }
+    .mobile-menu .mobile-cta { display: inline-block; margin-top: 12px; background: var(--blue); color: #fff; padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 14px; text-align: center; width: 100%; }
 
     /* ── SECTIONS ── */
     .section { padding: 56px 0; }
@@ -108,7 +115,7 @@
       .values-grid { grid-template-columns: 1fr; }
       .stats-row { gap: 24px; flex-wrap: wrap; }
       .navbar-links { display: none; }
-      .navbar-mobile-back { display: inline-flex; }
+      .navbar-hamburger { display: block; }
       .navbar-cta { display: none; }
       .about-hero { padding: 40px 0; }
       .footer-main { flex-direction: column; }
@@ -134,10 +141,22 @@
           <li><a href="/#faq">FAQ</a></li>
         </ul>
         <a href="https://ampere.sh" class="navbar-cta" target="_blank" rel="noopener">Visit #1 Pick →</a>
-        <a href="/" class="navbar-mobile-back">← Home</a>
+        <button class="navbar-hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </nav>
+  <div class="mobile-menu">
+    <a href="/">← Home</a>
+    <a href="/#compare">Comparison</a>
+    <a href="/#reviews">Reviews</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/about">About</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="https://ampere.sh" class="mobile-cta" target="_blank" rel="noopener">Visit #1 Pick →</a>
+  </div>
 
   <!-- ── HERO ── -->
   <section class="about-hero">
