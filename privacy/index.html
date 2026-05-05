@@ -25,6 +25,7 @@
     .navbar-links a:hover { color: var(--text-dark); }
     .navbar-cta { display: inline-flex; align-items: center; gap: 6px; background: var(--blue); color: #fff !important; font-size: 13px; font-weight: 600; padding: 9px 18px; border-radius: 8px; text-decoration: none !important; transition: background 0.15s, transform 0.1s; white-space: nowrap; }
     .navbar-cta:hover { background: var(--blue-dark); transform: translateY(-1px); }
+    .navbar-mobile-back { display: none; font-size: 14px; font-weight: 600; color: var(--blue); text-decoration: none; }
 
     .page-hero { background: var(--hero-bg); padding: 56px 0; text-align: center; }
     .page-hero h1 { font-size: clamp(24px, 3vw, 34px); font-weight: 800; color: var(--text-dark); letter-spacing: -0.5px; margin-bottom: 8px; }
@@ -65,6 +66,7 @@
           <li><a href="/#faq">FAQ</a></li>
         </ul>
         <a href="https://ampere.sh" class="navbar-cta" target="_blank" rel="noopener">Visit #1 Pick →</a>
+        <a href="/" class="navbar-mobile-back">← Home</a>
       </div>
     </div>
   </nav>
@@ -121,7 +123,7 @@
         <div class="footer-brand">
           <a href="/" class="footer-logo" style="text-decoration:none;color:#fff;">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:6px;"><rect width="24" height="24" rx="6" fill="url(#lg2)"/><path d="M7 17l5-10 5 10" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="9" r="2" fill="#fff"/><defs><linearGradient id="lg2" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#3B82F6"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient></defs></svg><span class="logo-best">Best</span>OpenClaw Hosting
-          </div>
+          </a>
           <div class="footer-disc">This is a completely independent review and comparison website. All reviews and rankings are based on genuine research and real-world testing. No provider has paid for placement or higher ratings.</div>
         </div>
         <div class="footer-links-section">
